@@ -263,6 +263,12 @@
             opacity: 0.5;
         }
         .field-player.empty .fp-name { color: var(--text-dim); }
+        .field-player.bench {
+            opacity: 0.6;
+            border-style: dashed;
+            transform: scale(0.9);
+        }
+        .field-player.bench .fp-name { color: var(--text-dim); }
         .zone-label {
             position: absolute;
             font-size: 11px;
@@ -865,7 +871,6 @@
         function renderFieldView() {
             const positions = ['DEF', 'MID', 'RUC', 'FWD', 'FLEX'];
             const onFieldCounts = { DEF: 6, MID: 8, RUC: 2, FWD: 6, FLEX: 1 };
-            let benchPlayers = [];
 
             positions.forEach(pos => {
                 const container = document.getElementById(`field-${pos.toLowerCase()}`);
@@ -874,45 +879,24 @@
 
                 let html = '';
                 players.forEach((p, i) => {
-                    if (i < onFieldCount) {
-                        let extraClass = '';
-                        if (p.captain) extraClass = 'captain';
-                        else if (p.vc) extraClass = 'vc';
+                    const isBench = i >= onFieldCount;
+                    let extraClass = isBench ? 'bench' : '';
+                    if (p.captain) extraClass += ' captain';
+                    else if (p.vc) extraClass += ' vc';
 
-                        html += `
-                            <div class="field-player ${extraClass}">
-                                <div class="fp-name">${p.name.split(' ').pop()}</div>
-                                <div class="fp-team">${p.team}</div>
-                                <div class="fp-price">$${(p.price/1000).toFixed(0)}K</div>
-                            </div>`;
-                    } else {
-                        benchPlayers.push({ ...p, pos: pos });
-                    }
-                });
-
-                // Add empty slots if needed
-                for (let i = players.length; i < onFieldCount; i++) {
                     html += `
-                        <div class="field-player empty">
-                            <div class="fp-name">Empty</div>
+                        <div class="field-player ${extraClass}">
+                            <div class="fp-name">${p.name.split(' ').pop()}</div>
+                            <div class="fp-team">${p.team}</div>
+                            <div class="fp-price">$${(p.price/1000).toFixed(0)}K</div>
                         </div>`;
-                }
+                });
 
                 container.innerHTML = html;
             });
 
-            // Render bench
-            const benchContainer = document.getElementById('field-bench');
-            if (benchPlayers.length > 0) {
-                benchContainer.innerHTML = benchPlayers.map(p => `
-                    <div class="bench-player">
-                        <div class="bp-name">${p.name.split(' ').pop()}</div>
-                        <div class="bp-pos">${p.pos}</div>
-                    </div>
-                `).join('');
-            } else {
-                benchContainer.innerHTML = '<div style="color: var(--text-dim);">No bench players</div>';
-            }
+            // Hide the bench container since all players are on field
+            document.querySelector('.bench-container').style.display = 'none';
         }
 
         document.addEventListener('DOMContentLoaded', init);
