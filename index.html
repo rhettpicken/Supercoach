@@ -157,15 +157,164 @@
         }
         .resource-link:hover { background: var(--accent); color: var(--bg-dark); }
 
+        /* Field View */
+        .field-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .field {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            background: linear-gradient(180deg, #2d5a27 0%, #3d7a37 50%, #2d5a27 100%);
+            border-radius: 50%;
+            border: 4px solid #1a3d15;
+            box-shadow: inset 0 0 60px rgba(0,0,0,0.3), 0 10px 40px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+        .field::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+        .field::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+        }
+        .field-zone {
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            padding: 5px;
+        }
+        .zone-fwd { top: 5%; left: 50%; transform: translateX(-50%); width: 70%; }
+        .zone-mid { top: 35%; left: 50%; transform: translateX(-50%); width: 85%; }
+        .zone-ruc { top: 48%; left: 50%; transform: translateX(-50%); width: 30%; }
+        .zone-def { bottom: 8%; left: 50%; transform: translateX(-50%); width: 70%; }
+        .zone-flex { top: 50%; right: 5%; transform: translateY(-50%); width: 80px; }
+        .field-player {
+            background: rgba(26, 31, 38, 0.95);
+            border-radius: 8px;
+            padding: 6px 10px;
+            text-align: center;
+            min-width: 90px;
+            max-width: 110px;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .field-player:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4);
+        }
+        .field-player.captain { border-color: var(--warning); }
+        .field-player.vc { border-color: var(--purple); }
+        .field-player .fp-name {
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .field-player .fp-team {
+            font-size: 9px;
+            color: var(--text-dim);
+        }
+        .field-player .fp-price {
+            font-size: 10px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .field-player.empty {
+            border-style: dashed;
+            border-color: var(--text-dim);
+            opacity: 0.5;
+        }
+        .field-player.empty .fp-name { color: var(--text-dim); }
+        .zone-label {
+            position: absolute;
+            font-size: 10px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        .label-fwd { top: 2%; left: 50%; transform: translateX(-50%); }
+        .label-mid { top: 32%; left: 50%; transform: translateX(-50%); }
+        .label-def { bottom: 3%; left: 50%; transform: translateX(-50%); }
+
+        /* Bench Row */
+        .bench-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .bench-label {
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .bench-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            background: var(--bg-card);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .bench-player {
+            background: var(--bg-hover);
+            border-radius: 6px;
+            padding: 8px 12px;
+            text-align: center;
+            min-width: 80px;
+            opacity: 0.7;
+            border: 1px solid var(--bg-hover);
+        }
+        .bench-player .bp-name {
+            font-size: 10px;
+            font-weight: 500;
+        }
+        .bench-player .bp-pos {
+            font-size: 8px;
+            color: var(--text-dim);
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .team-grid { grid-template-columns: repeat(3, 1fr); }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
+            .field { height: 500px; }
         }
         @media (max-width: 768px) {
             .team-grid { grid-template-columns: 1fr 1fr; }
             .tools-grid { grid-template-columns: 1fr; }
             .header-stats { display: none; }
+            .field { height: 400px; }
+            .field-player { min-width: 70px; padding: 4px 6px; }
+            .field-player .fp-name { font-size: 9px; }
         }
     </style>
 </head>
@@ -195,6 +344,7 @@
 
         <div class="tabs">
             <button class="tab active" onclick="showTab('team')">My Team</button>
+            <button class="tab" onclick="showTab('field')">Field View</button>
             <button class="tab" onclick="showTab('players')">All Players</button>
             <button class="tab" onclick="showTab('tools')">Tools</button>
         </div>
@@ -236,6 +386,28 @@
                         <span class="position-count" id="flex-count">0/1</span>
                     </div>
                     <div id="flex-slots"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIELD VIEW TAB -->
+        <div id="field-tab" class="tab-content">
+            <div class="field-container">
+                <div class="field">
+                    <span class="zone-label label-fwd">FORWARDS</span>
+                    <span class="zone-label label-mid">MIDFIELD</span>
+                    <span class="zone-label label-def">DEFENDERS</span>
+
+                    <div class="field-zone zone-fwd" id="field-fwd"></div>
+                    <div class="field-zone zone-mid" id="field-mid"></div>
+                    <div class="field-zone zone-ruc" id="field-ruc"></div>
+                    <div class="field-zone zone-def" id="field-def"></div>
+                    <div class="field-zone zone-flex" id="field-flex"></div>
+                </div>
+
+                <div class="bench-container">
+                    <div class="bench-label">Bench</div>
+                    <div class="bench-row" id="field-bench"></div>
                 </div>
             </div>
         </div>
@@ -427,6 +599,7 @@
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelector(`[onclick="showTab('${tab}')"]`).classList.add('active');
             document.getElementById(`${tab}-tab`).classList.add('active');
+            if (tab === 'field') renderFieldView();
         }
 
         function renderTeam() {
@@ -653,6 +826,59 @@
                     ]
                 };
                 saveTeam();
+            }
+        }
+
+        function renderFieldView() {
+            const positions = ['DEF', 'MID', 'RUC', 'FWD', 'FLEX'];
+            const onFieldCounts = { DEF: 6, MID: 8, RUC: 2, FWD: 6, FLEX: 1 };
+            let benchPlayers = [];
+
+            positions.forEach(pos => {
+                const container = document.getElementById(`field-${pos.toLowerCase()}`);
+                const players = myTeam[pos];
+                const onFieldCount = onFieldCounts[pos];
+
+                let html = '';
+                players.forEach((p, i) => {
+                    if (i < onFieldCount) {
+                        let extraClass = '';
+                        if (p.captain) extraClass = 'captain';
+                        else if (p.vc) extraClass = 'vc';
+
+                        html += `
+                            <div class="field-player ${extraClass}">
+                                <div class="fp-name">${p.name.split(' ').pop()}</div>
+                                <div class="fp-team">${p.team}</div>
+                                <div class="fp-price">$${(p.price/1000).toFixed(0)}K</div>
+                            </div>`;
+                    } else {
+                        benchPlayers.push({ ...p, pos: pos });
+                    }
+                });
+
+                // Add empty slots if needed
+                for (let i = players.length; i < onFieldCount; i++) {
+                    html += `
+                        <div class="field-player empty">
+                            <div class="fp-name">Empty</div>
+                        </div>`;
+                }
+
+                container.innerHTML = html;
+            });
+
+            // Render bench
+            const benchContainer = document.getElementById('field-bench');
+            if (benchPlayers.length > 0) {
+                benchContainer.innerHTML = benchPlayers.map(p => `
+                    <div class="bench-player">
+                        <div class="bp-name">${p.name.split(' ').pop()}</div>
+                        <div class="bp-pos">${p.pos}</div>
+                    </div>
+                `).join('');
+            } else {
+                benchContainer.innerHTML = '<div style="color: var(--text-dim);">No bench players</div>';
             }
         }
 
