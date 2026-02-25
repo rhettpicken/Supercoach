@@ -167,23 +167,23 @@
         .field {
             position: relative;
             width: 100%;
-            max-width: 1000px;
-            height: 800px;
-            background: linear-gradient(180deg, #2d5a27 0%, #3d7a37 50%, #2d5a27 100%);
+            max-width: 900px;
+            height: 720px;
+            background: radial-gradient(ellipse at center, #3d7a37 0%, #2d5a27 70%, #1a3d15 100%);
             border-radius: 50%;
-            border: 5px solid #1a3d15;
-            box-shadow: inset 0 0 80px rgba(0,0,0,0.3), 0 10px 50px rgba(0,0,0,0.4);
-            overflow: visible;
+            border: 6px solid #1a3d15;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.4), 0 10px 50px rgba(0,0,0,0.5);
         }
+        /* Center circle */
         .field::before {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 140px;
-            height: 140px;
-            border: 3px solid rgba(255,255,255,0.25);
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgba(255,255,255,0.2);
             border-radius: 50%;
         }
         .field::after {
@@ -192,133 +192,164 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 12px;
-            height: 12px;
-            background: rgba(255,255,255,0.35);
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
             border-radius: 50%;
         }
         /* 50m arcs */
-        .field .arc-top, .field .arc-bottom {
+        .arc-top, .arc-bottom {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 60%;
-            height: 80px;
-            border: 2px solid rgba(255,255,255,0.15);
-            border-radius: 0 0 50% 50%;
+            width: 55%;
+            height: 70px;
+            border: 2px solid rgba(255,255,255,0.12);
         }
-        .field .arc-top { top: 12%; border-radius: 50% 50% 0 0; }
-        .field .arc-bottom { bottom: 12%; }
+        .arc-top { top: 15%; border-radius: 50% 50% 0 0; border-bottom: none; }
+        .arc-bottom { bottom: 15%; border-radius: 0 0 50% 50%; border-top: none; }
+
+        /* Position zones - stacked vertically with proper spacing */
         .field-zone {
             position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-content: flex-start;
-            gap: 6px;
-            padding: 5px;
+            align-content: center;
+            gap: 8px;
         }
-        .zone-fwd { top: 3%; left: 50%; transform: translateX(-50%); width: 80%; }
-        .zone-mid { top: 32%; left: 50%; transform: translateX(-50%); width: 92%; }
-        .zone-ruc { top: 46%; left: 50%; transform: translateX(-50%); width: 25%; }
-        .zone-def { bottom: 3%; left: 50%; transform: translateX(-50%); width: 80%; }
-        .zone-flex { top: 46%; left: 4%; width: 85px; }
+        .zone-fwd {
+            top: 4%;
+            width: 75%;
+            height: 18%;
+        }
+        .zone-mid {
+            top: 26%;
+            width: 88%;
+            height: 20%;
+        }
+        .zone-ruc {
+            top: 47%;
+            width: 22%;
+            height: 10%;
+        }
+        .zone-flex {
+            top: 47%;
+            left: 8%;
+            transform: none;
+            width: 12%;
+            height: 10%;
+        }
+        .zone-def {
+            bottom: 4%;
+            width: 75%;
+            height: 18%;
+        }
+
+        /* Player cards */
         .field-player {
-            background: rgba(26, 31, 38, 0.92);
-            border-radius: 6px;
-            padding: 5px 8px;
+            background: rgba(20, 25, 32, 0.95);
+            border-radius: 8px;
+            padding: 6px 10px;
             text-align: center;
-            min-width: 80px;
-            max-width: 95px;
+            width: 85px;
             border: 2px solid var(--accent);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.15s ease;
         }
         .field-player:hover {
-            transform: scale(1.15);
+            transform: scale(1.12);
             z-index: 10;
-            box-shadow: 0 4px 20px rgba(0, 212, 170, 0.5);
+            box-shadow: 0 6px 25px rgba(0, 212, 170, 0.6);
         }
-        .field-player.captain { border-color: var(--warning); box-shadow: 0 0 8px var(--warning); }
-        .field-player.vc { border-color: var(--purple); box-shadow: 0 0 8px var(--purple); }
+        .field-player.captain {
+            border-color: var(--warning);
+            box-shadow: 0 0 12px var(--warning);
+        }
+        .field-player.vc {
+            border-color: var(--purple);
+            box-shadow: 0 0 12px var(--purple);
+        }
         .field-player .fp-name {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            color: var(--text);
         }
         .field-player .fp-team {
-            font-size: 8px;
+            font-size: 9px;
             color: var(--text-dim);
+            margin: 1px 0;
         }
         .field-player .fp-price {
-            font-size: 9px;
+            font-size: 10px;
             color: var(--accent);
             font-weight: bold;
         }
-        .field-player.empty {
-            border-style: dashed;
-            border-color: var(--text-dim);
-            opacity: 0.5;
-        }
-        .field-player.empty .fp-name { color: var(--text-dim); }
-        .field-player.bench {
-            opacity: 0.6;
-            border-style: dashed;
-            transform: scale(0.9);
-        }
-        .field-player.bench .fp-name { color: var(--text-dim); }
+
+        /* Zone labels */
         .zone-label {
             position: absolute;
-            font-size: 11px;
-            color: rgba(255,255,255,0.5);
+            font-size: 10px;
+            color: rgba(255,255,255,0.35);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: bold;
+            letter-spacing: 2px;
+            font-weight: 600;
         }
-        .label-fwd { top: 0.5%; left: 50%; transform: translateX(-50%); }
-        .label-mid { top: 29%; left: 50%; transform: translateX(-50%); }
-        .label-def { bottom: 0.5%; left: 50%; transform: translateX(-50%); }
-        .label-ruc { top: 43%; left: 50%; transform: translateX(-50%); font-size: 9px; }
+        .label-fwd { top: 1.5%; left: 50%; transform: translateX(-50%); }
+        .label-mid { top: 23.5%; left: 50%; transform: translateX(-50%); }
+        .label-ruc { top: 44.5%; left: 50%; transform: translateX(-50%); font-size: 9px; }
+        .label-def { bottom: 1.5%; left: 50%; transform: translateX(-50%); }
 
-        /* Bench Row */
+        /* Bench section - below field */
         .bench-container {
             margin-top: 25px;
             width: 100%;
-            max-width: 1000px;
+            max-width: 900px;
         }
         .bench-label {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-dim);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-bottom: 12px;
             text-align: center;
+            font-weight: 600;
         }
         .bench-row {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             background: var(--bg-card);
-            padding: 18px;
+            padding: 16px;
             border-radius: 12px;
+            border: 1px solid var(--bg-hover);
         }
         .bench-player {
             background: var(--bg-hover);
             border-radius: 6px;
-            padding: 10px 14px;
+            padding: 8px 12px;
             text-align: center;
-            min-width: 90px;
-            opacity: 0.7;
-            border: 1px solid var(--text-dim);
+            min-width: 85px;
+            border: 1px dashed var(--text-dim);
+            opacity: 0.8;
         }
         .bench-player .bp-name {
             font-size: 11px;
             font-weight: 500;
+            color: var(--text);
         }
         .bench-player .bp-pos {
+            font-size: 9px;
+            color: var(--accent);
+            margin-top: 2px;
+        }
+        .bench-player .bp-price {
             font-size: 9px;
             color: var(--text-dim);
         }
@@ -327,26 +358,30 @@
         @media (max-width: 1200px) {
             .team-grid { grid-template-columns: repeat(3, 1fr); }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
-            .field { height: 700px; max-width: 850px; }
-            .bench-container { max-width: 850px; }
+            .field { height: 650px; max-width: 800px; }
+            .bench-container { max-width: 800px; }
+            .field-player { width: 78px; padding: 5px 8px; }
         }
         @media (max-width: 900px) {
-            .field { height: 600px; max-width: 700px; }
-            .bench-container { max-width: 700px; }
-            .field-player { min-width: 70px; max-width: 85px; padding: 4px 6px; }
-            .field-player .fp-name { font-size: 9px; }
-            .field-player .fp-price { font-size: 8px; }
+            .field { height: 580px; max-width: 680px; }
+            .bench-container { max-width: 680px; }
+            .field-player { width: 70px; padding: 4px 6px; }
+            .field-player .fp-name { font-size: 10px; }
+            .field-player .fp-price { font-size: 9px; }
+            .field-zone { gap: 6px; }
         }
         @media (max-width: 768px) {
             .team-grid { grid-template-columns: 1fr 1fr; }
             .tools-grid { grid-template-columns: 1fr; }
             .header-stats { display: none; }
-            .field { height: 500px; max-width: 95%; }
-            .field-player { min-width: 60px; max-width: 75px; padding: 3px 5px; }
-            .field-player .fp-name { font-size: 8px; }
+            .field { height: 500px; max-width: 98%; }
+            .field-player { width: 62px; padding: 3px 5px; }
+            .field-player .fp-name { font-size: 9px; }
             .field-player .fp-team { font-size: 7px; }
-            .field-player .fp-price { font-size: 7px; }
-            .bench-player { min-width: 70px; padding: 6px 10px; }
+            .field-player .fp-price { font-size: 8px; }
+            .field-zone { gap: 4px; }
+            .bench-player { min-width: 70px; padding: 6px 8px; }
+            .zone-flex { left: 5%; }
         }
     </style>
 </head>
@@ -871,7 +906,9 @@
         function renderFieldView() {
             const positions = ['DEF', 'MID', 'RUC', 'FWD', 'FLEX'];
             const onFieldCounts = { DEF: 6, MID: 8, RUC: 2, FWD: 6, FLEX: 1 };
+            let benchPlayers = [];
 
+            // Render on-field players in their zones
             positions.forEach(pos => {
                 const container = document.getElementById(`field-${pos.toLowerCase()}`);
                 const players = myTeam[pos];
@@ -879,24 +916,38 @@
 
                 let html = '';
                 players.forEach((p, i) => {
-                    const isBench = i >= onFieldCount;
-                    let extraClass = isBench ? 'bench' : '';
-                    if (p.captain) extraClass += ' captain';
-                    else if (p.vc) extraClass += ' vc';
+                    if (i < onFieldCount) {
+                        let extraClass = '';
+                        if (p.captain) extraClass = 'captain';
+                        else if (p.vc) extraClass = 'vc';
 
-                    html += `
-                        <div class="field-player ${extraClass}">
-                            <div class="fp-name">${p.name.split(' ').pop()}</div>
-                            <div class="fp-team">${p.team}</div>
-                            <div class="fp-price">$${(p.price/1000).toFixed(0)}K</div>
-                        </div>`;
+                        html += `
+                            <div class="field-player ${extraClass}">
+                                <div class="fp-name">${p.name.split(' ').pop()}</div>
+                                <div class="fp-team">${p.team}</div>
+                                <div class="fp-price">$${(p.price/1000).toFixed(0)}K</div>
+                            </div>`;
+                    } else {
+                        benchPlayers.push({ ...p, pos: pos });
+                    }
                 });
 
                 container.innerHTML = html;
             });
 
-            // Hide the bench container since all players are on field
-            document.querySelector('.bench-container').style.display = 'none';
+            // Render bench players below the field
+            const benchContainer = document.getElementById('field-bench');
+            document.querySelector('.bench-container').style.display = 'block';
+
+            if (benchPlayers.length > 0) {
+                benchContainer.innerHTML = benchPlayers.map(p => `
+                    <div class="bench-player">
+                        <div class="bp-name">${p.name.split(' ').pop()}</div>
+                        <div class="bp-pos">${p.pos}</div>
+                        <div class="bp-price">$${(p.price/1000).toFixed(0)}K</div>
+                    </div>
+                `).join('');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', init);
