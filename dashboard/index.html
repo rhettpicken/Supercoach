@@ -157,231 +157,15 @@
         }
         .resource-link:hover { background: var(--accent); color: var(--bg-dark); }
 
-        /* Field View */
-        .field-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        .field {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            height: 720px;
-            background: radial-gradient(ellipse at center, #3d7a37 0%, #2d5a27 70%, #1a3d15 100%);
-            border-radius: 50%;
-            border: 6px solid #1a3d15;
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.4), 0 10px 50px rgba(0,0,0,0.5);
-        }
-        /* Center circle */
-        .field::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            border: 3px solid rgba(255,255,255,0.2);
-            border-radius: 50%;
-        }
-        .field::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-        }
-        /* 50m arcs */
-        .arc-top, .arc-bottom {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 55%;
-            height: 70px;
-            border: 2px solid rgba(255,255,255,0.12);
-        }
-        .arc-top { top: 15%; border-radius: 50% 50% 0 0; border-bottom: none; }
-        .arc-bottom { bottom: 15%; border-radius: 0 0 50% 50%; border-top: none; }
-
-        /* Position zones - stacked vertically with proper spacing */
-        .field-zone {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
-            gap: 8px;
-        }
-        .zone-fwd {
-            top: 4%;
-            width: 75%;
-            height: 18%;
-        }
-        .zone-mid {
-            top: 26%;
-            width: 88%;
-            height: 20%;
-        }
-        .zone-ruc {
-            top: 47%;
-            width: 22%;
-            height: 10%;
-        }
-        .zone-flex {
-            top: 47%;
-            left: 8%;
-            transform: none;
-            width: 12%;
-            height: 10%;
-        }
-        .zone-def {
-            bottom: 4%;
-            width: 75%;
-            height: 18%;
-        }
-
-        /* Player cards */
-        .field-player {
-            background: rgba(20, 25, 32, 0.95);
-            border-radius: 8px;
-            padding: 6px 10px;
-            text-align: center;
-            width: 85px;
-            border: 2px solid var(--accent);
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }
-        .field-player:hover {
-            transform: scale(1.12);
-            z-index: 10;
-            box-shadow: 0 6px 25px rgba(0, 212, 170, 0.6);
-        }
-        .field-player.captain {
-            border-color: var(--warning);
-            box-shadow: 0 0 12px var(--warning);
-        }
-        .field-player.vc {
-            border-color: var(--purple);
-            box-shadow: 0 0 12px var(--purple);
-        }
-        .field-player .fp-name {
-            font-size: 11px;
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: var(--text);
-        }
-        .field-player .fp-team {
-            font-size: 9px;
-            color: var(--text-dim);
-            margin: 1px 0;
-        }
-        .field-player .fp-price {
-            font-size: 10px;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Zone labels */
-        .zone-label {
-            position: absolute;
-            font-size: 10px;
-            color: rgba(255,255,255,0.35);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-        .label-fwd { top: 1.5%; left: 50%; transform: translateX(-50%); }
-        .label-mid { top: 23.5%; left: 50%; transform: translateX(-50%); }
-        .label-ruc { top: 44.5%; left: 50%; transform: translateX(-50%); font-size: 9px; }
-        .label-def { bottom: 1.5%; left: 50%; transform: translateX(-50%); }
-
-        /* Bench section - below field */
-        .bench-container {
-            margin-top: 25px;
-            width: 100%;
-            max-width: 900px;
-        }
-        .bench-label {
-            font-size: 12px;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-            text-align: center;
-            font-weight: 600;
-        }
-        .bench-row {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            background: var(--bg-card);
-            padding: 16px;
-            border-radius: 12px;
-            border: 1px solid var(--bg-hover);
-        }
-        .bench-player {
-            background: var(--bg-hover);
-            border-radius: 6px;
-            padding: 8px 12px;
-            text-align: center;
-            min-width: 85px;
-            border: 1px dashed var(--text-dim);
-            opacity: 0.8;
-        }
-        .bench-player .bp-name {
-            font-size: 11px;
-            font-weight: 500;
-            color: var(--text);
-        }
-        .bench-player .bp-pos {
-            font-size: 9px;
-            color: var(--accent);
-            margin-top: 2px;
-        }
-        .bench-player .bp-price {
-            font-size: 9px;
-            color: var(--text-dim);
-        }
-
         /* Responsive */
         @media (max-width: 1200px) {
             .team-grid { grid-template-columns: repeat(3, 1fr); }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
-            .field { height: 650px; max-width: 800px; }
-            .bench-container { max-width: 800px; }
-            .field-player { width: 78px; padding: 5px 8px; }
-        }
-        @media (max-width: 900px) {
-            .field { height: 580px; max-width: 680px; }
-            .bench-container { max-width: 680px; }
-            .field-player { width: 70px; padding: 4px 6px; }
-            .field-player .fp-name { font-size: 10px; }
-            .field-player .fp-price { font-size: 9px; }
-            .field-zone { gap: 6px; }
         }
         @media (max-width: 768px) {
             .team-grid { grid-template-columns: 1fr 1fr; }
             .tools-grid { grid-template-columns: 1fr; }
             .header-stats { display: none; }
-            .field { height: 500px; max-width: 98%; }
-            .field-player { width: 62px; padding: 3px 5px; }
-            .field-player .fp-name { font-size: 9px; }
-            .field-player .fp-team { font-size: 7px; }
-            .field-player .fp-price { font-size: 8px; }
-            .field-zone { gap: 4px; }
-            .bench-player { min-width: 70px; padding: 6px 8px; }
-            .zone-flex { left: 5%; }
         }
     </style>
 </head>
@@ -411,7 +195,6 @@
 
         <div class="tabs">
             <button class="tab active" onclick="showTab('team')">My Team</button>
-            <button class="tab" onclick="showTab('field')">Field View</button>
             <button class="tab" onclick="showTab('players')">All Players</button>
             <button class="tab" onclick="showTab('tools')">Tools</button>
         </div>
@@ -453,35 +236,6 @@
                         <span class="position-count" id="flex-count">0/1</span>
                     </div>
                     <div id="flex-slots"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- FIELD VIEW TAB -->
-        <div id="field-tab" class="tab-content">
-            <div class="field-container">
-                <div class="field">
-                    <!-- Field markings -->
-                    <div class="arc-top"></div>
-                    <div class="arc-bottom"></div>
-
-                    <!-- Zone labels -->
-                    <span class="zone-label label-fwd">FORWARDS</span>
-                    <span class="zone-label label-mid">MIDFIELD</span>
-                    <span class="zone-label label-ruc">RUCK</span>
-                    <span class="zone-label label-def">DEFENDERS</span>
-
-                    <!-- Player zones -->
-                    <div class="field-zone zone-fwd" id="field-fwd"></div>
-                    <div class="field-zone zone-mid" id="field-mid"></div>
-                    <div class="field-zone zone-ruc" id="field-ruc"></div>
-                    <div class="field-zone zone-def" id="field-def"></div>
-                    <div class="field-zone zone-flex" id="field-flex"></div>
-                </div>
-
-                <div class="bench-container">
-                    <div class="bench-label">Bench</div>
-                    <div class="bench-row" id="field-bench"></div>
                 </div>
             </div>
         </div>
@@ -572,57 +326,27 @@
     </div>
 
     <script>
-        // Player Database - 185 players across all 18 teams
+        // Player Database
         const allPlayers = {
             DEF: [
                 {name: "Nasiah Wanganeen-Milera", team: "STK", price: 622300, avg: 108, ownership: 48, status: "premium"},
                 {name: "Jordan Dawson", team: "ADE", price: 611300, avg: 106, ownership: 35, status: "premium"},
                 {name: "Jack Sinclair", team: "STK", price: 606600, avg: 105, ownership: 30, status: "premium"},
-                {name: "Finn Callaghan", team: "GWS", price: 605500, avg: 104, ownership: 25, dpp: ["DEF","MID"], status: "premium"},
+                {name: "Finn Callaghan", team: "GWS", price: 605500, avg: 104, ownership: 25, status: "premium"},
                 {name: "Ed Richards", team: "WBD", price: 602300, avg: 103, ownership: 20, status: "premium"},
                 {name: "Connor Rozee", team: "PTA", price: 568500, avg: 105, ownership: 57, dpp: ["DEF","MID"], status: "premium"},
                 {name: "James Sicily", team: "HAW", price: 545000, avg: 100, ownership: 25, status: "premium"},
                 {name: "Lachie Whitfield", team: "GWS", price: 520000, avg: 98, ownership: 18, status: "premium"},
-                {name: "Josh Daicos", team: "COL", price: 515000, avg: 96, ownership: 15, status: "premium"},
-                {name: "Callum Mills", team: "SYD", price: 508000, avg: 95, ownership: 12, status: "premium"},
-                {name: "Lachie Ash", team: "GWS", price: 502000, avg: 94, ownership: 14, status: "premium"},
-                {name: "Jordan Clark", team: "FRE", price: 498000, avg: 93, ownership: 16, status: "premium"},
-                {name: "Dayne Zorko", team: "BRI", price: 492000, avg: 92, ownership: 10, status: "premium"},
-                {name: "Bailey Dale", team: "WBD", price: 485000, avg: 91, ownership: 8, status: "midprice"},
-                {name: "Rory Laird", team: "ADE", price: 478000, avg: 90, ownership: 10, status: "midprice"},
-                {name: "Karl Amon", team: "HAW", price: 468000, avg: 89, ownership: 9, status: "midprice"},
-                {name: "Sam Docherty", team: "CAR", price: 462000, avg: 88, ownership: 7, status: "midprice"},
-                {name: "Christian Salem", team: "MEL", price: 455000, avg: 87, ownership: 6, status: "midprice"},
-                {name: "Nick Blakey", team: "SYD", price: 448000, avg: 86, ownership: 8, status: "midprice"},
-                {name: "Jayden Short", team: "RIC", price: 442000, avg: 85, ownership: 7, status: "midprice"},
-                {name: "Daniel Rioli", team: "RIC", price: 435000, avg: 84, ownership: 5, status: "midprice"},
-                {name: "Miles Bergman", team: "PTA", price: 428000, avg: 83, ownership: 6, status: "midprice"},
-                {name: "Sam De Koning", team: "GEE", price: 422000, avg: 82, ownership: 4, status: "midprice"},
-                {name: "Tom Barrass", team: "HAW", price: 415000, avg: 81, ownership: 5, status: "midprice"},
-                {name: "Colby McKercher", team: "NTH", price: 408000, avg: 80, ownership: 12, status: "midprice"},
-                {name: "Steven May", team: "MEL", price: 402000, avg: 79, ownership: 3, status: "midprice"},
-                {name: "Caleb Daniel", team: "WBD", price: 395000, avg: 78, ownership: 4, status: "midprice"},
                 {name: "Hayden Young", team: "FRE", price: 389000, avg: 95, ownership: 40, dpp: ["DEF","MID"], status: "value"},
-                {name: "Harris Andrews", team: "BRI", price: 382000, avg: 77, ownership: 5, status: "midprice"},
-                {name: "Sam Taylor", team: "GWS", price: 375000, avg: 76, ownership: 4, status: "midprice"},
-                {name: "Jeremy McGovern", team: "WCE", price: 368000, avg: 75, ownership: 3, status: "midprice"},
-                {name: "Jack Bowes", team: "GCS", price: 362000, avg: 74, ownership: 5, status: "midprice"},
-                {name: "Dan Houston", team: "PTA", price: 355000, avg: 73, ownership: 6, status: "midprice"},
                 {name: "Sam Grlj", team: "RIC", price: 322000, avg: 80, ownership: 45, dpp: ["DEF","MID"], status: "cashcow"},
                 {name: "Jacob Farrow", team: "ESS", price: 314000, avg: 75, ownership: 40, dpp: ["DEF","MID"], status: "cashcow"},
-                {name: "Liam Baker", team: "WCE", price: 298000, avg: 72, ownership: 8, status: "value"},
-                {name: "Archie Roberts", team: "ESS", price: 285000, avg: 70, ownership: 10, status: "value"},
                 {name: "Keidean Coleman", team: "BRI", price: 233800, avg: 85, ownership: 42, status: "value"},
-                {name: "Josh Battle", team: "SYD", price: 225000, avg: 68, ownership: 5, status: "value"},
                 {name: "Zeke Uwland", team: "GCS", price: 199000, avg: 70, ownership: 61, dpp: ["DEF","MID"], status: "cashcow"},
-                {name: "Josh Gibcus", team: "RIC", price: 188000, avg: 62, ownership: 15, status: "value"},
                 {name: "Jai Serong", team: "SYD", price: 119900, avg: 55, ownership: 35, status: "rookie"},
                 {name: "Xavier Taylor", team: "MEL", price: 117300, avg: 55, ownership: 30, status: "rookie"},
-                {name: "Bo Allan", team: "WCE", price: 117300, avg: 52, ownership: 22, status: "rookie"},
-                {name: "Harry Dean", team: "CAR", price: 117300, avg: 50, ownership: 18, status: "rookie"},
-                {name: "Dylan Patterson", team: "WCE", price: 117300, avg: 52, ownership: 20, status: "rookie"},
-                {name: "Lachy Dovaston", team: "GEE", price: 117300, avg: 48, ownership: 12, status: "rookie"},
-                {name: "Cooper Murley", team: "SYD", price: 102400, avg: 45, ownership: 8, status: "rookie"}
+                {name: "Josh Gibcus", team: "RIC", price: 117300, avg: 50, ownership: 25, status: "rookie"},
+                {name: "Bo Allan", team: "WCE", price: 117300, avg: 50, ownership: 20, status: "rookie"},
+                {name: "Harry Dean", team: "CAR", price: 117300, avg: 50, ownership: 18, status: "rookie"}
             ],
             MID: [
                 {name: "Marcus Bontempelli", team: "WBD", price: 706800, avg: 127, ownership: 55, status: "elite"},
@@ -635,136 +359,54 @@
                 {name: "Noah Anderson", team: "GCS", price: 619700, avg: 110, ownership: 40, status: "premium"},
                 {name: "Andrew Brayshaw", team: "FRE", price: 616400, avg: 107, ownership: 32, status: "premium"},
                 {name: "George Hewett", team: "CAR", price: 607300, avg: 105, ownership: 25, status: "premium"},
-                {name: "Zach Merrett", team: "ESS", price: 598000, avg: 104, ownership: 22, status: "premium"},
-                {name: "Caleb Serong", team: "FRE", price: 592000, avg: 103, ownership: 20, status: "premium"},
-                {name: "Clayton Oliver", team: "GWS", price: 585000, avg: 102, ownership: 18, status: "premium"},
-                {name: "Tom Green", team: "GWS", price: 578000, avg: 101, ownership: 16, status: "premium"},
-                {name: "Touk Miller", team: "GCS", price: 572000, avg: 100, ownership: 14, status: "premium"},
-                {name: "Chad Warner", team: "SYD", price: 565000, avg: 99, ownership: 18, status: "premium"},
-                {name: "Will Ashcroft", team: "BRI", price: 558000, avg: 98, ownership: 22, status: "premium"},
-                {name: "Patrick Cripps", team: "CAR", price: 550000, avg: 97, ownership: 15, status: "premium"},
-                {name: "Sam Walsh", team: "CAR", price: 542000, avg: 96, ownership: 12, status: "premium"},
-                {name: "Adam Cerra", team: "CAR", price: 535000, avg: 95, ownership: 10, status: "premium"},
-                {name: "Errol Gulden", team: "SYD", price: 528000, avg: 95, ownership: 20, status: "premium"},
-                {name: "Harley Reid", team: "WCE", price: 520000, avg: 94, ownership: 25, status: "premium"},
-                {name: "Jye Caldwell", team: "ESS", price: 512000, avg: 93, ownership: 15, status: "premium"},
-                {name: "Lachie Neale", team: "BRI", price: 505000, avg: 92, ownership: 10, status: "premium"},
-                {name: "Jason Horne-Francis", team: "PTA", price: 498000, avg: 95, ownership: 25, status: "midprice"},
-                {name: "Tom Liberatore", team: "WBD", price: 490000, avg: 91, ownership: 8, status: "midprice"},
-                {name: "Ollie Wines", team: "PTA", price: 482000, avg: 90, ownership: 10, status: "midprice"},
-                {name: "Jack Steele", team: "MEL", price: 475000, avg: 89, ownership: 7, status: "midprice"},
-                {name: "Jai Newcombe", team: "HAW", price: 468000, avg: 88, ownership: 12, status: "midprice"},
-                {name: "Luke Davies-Uniacke", team: "NTH", price: 460000, avg: 87, ownership: 10, status: "midprice"},
-                {name: "Christian Petracca", team: "GCS", price: 452000, avg: 86, ownership: 15, status: "midprice"},
-                {name: "Jack Macrae", team: "STK", price: 445000, avg: 85, ownership: 6, status: "midprice"},
-                {name: "Tom Powell", team: "NTH", price: 438000, avg: 84, ownership: 9, status: "midprice"},
-                {name: "Max Holmes", team: "GEE", price: 430000, avg: 83, ownership: 11, status: "midprice"},
-                {name: "Jack Viney", team: "MEL", price: 422000, avg: 82, ownership: 5, status: "midprice"},
-                {name: "Matthew Kennedy", team: "WBD", price: 415000, avg: 81, ownership: 7, status: "midprice"},
-                {name: "Cam Rayner", team: "BRI", price: 408000, avg: 80, ownership: 8, status: "midprice"},
-                {name: "Jordan De Goey", team: "COL", price: 400000, avg: 79, ownership: 12, dpp: ["MID","FWD"], status: "midprice"},
-                {name: "Tim Taranto", team: "RIC", price: 392000, avg: 78, ownership: 6, status: "midprice"},
-                {name: "Nic Martin", team: "ESS", price: 385000, avg: 77, ownership: 9, dpp: ["MID","FWD"], status: "midprice"},
-                {name: "Josh Kelly", team: "GWS", price: 378000, avg: 85, ownership: 8, status: "midprice"},
-                {name: "Scott Pendlebury", team: "COL", price: 370000, avg: 76, ownership: 4, status: "midprice"},
-                {name: "Isaac Cumming", team: "GWS", price: 362000, avg: 75, ownership: 5, status: "midprice"},
+                {name: "Clayton Oliver", team: "MEL", price: 580000, avg: 105, ownership: 20, status: "premium"},
+                {name: "Errol Gulden", team: "SYD", price: 520000, avg: 95, ownership: 20, status: "premium"},
+                {name: "Jason Horne-Francis", team: "PTA", price: 500000, avg: 95, ownership: 25, status: "midprice"},
                 {name: "Darcy Parish", team: "ESS", price: 334600, avg: 85, ownership: 30, status: "value"},
+                {name: "Adam Treloar", team: "COL", price: 311700, avg: 100, ownership: 50, dpp: ["MID","FWD"], status: "value"},
                 {name: "Jack Carroll", team: "STK", price: 332000, avg: 75, ownership: 35, status: "cashcow"},
-                {name: "Dan Annable", team: "BRI", price: 330000, avg: 72, ownership: 22, status: "cashcow"},
                 {name: "Sam Cumming", team: "RIC", price: 326000, avg: 75, ownership: 30, status: "cashcow"},
                 {name: "Harry Schoenberg", team: "WCE", price: 320000, avg: 78, ownership: 25, status: "cashcow"},
-                {name: "Willem Duursma", team: "PTA", price: 315000, avg: 74, ownership: 28, status: "cashcow"},
-                {name: "Adam Treloar", team: "COL", price: 311700, avg: 100, ownership: 50, dpp: ["MID","FWD"], status: "value"},
-                {name: "Finlay Macrae", team: "WCE", price: 305000, avg: 72, ownership: 18, dpp: ["MID","FWD"], status: "cashcow"},
-                {name: "Bailey Humphrey", team: "GCS", price: 298000, avg: 70, ownership: 20, dpp: ["MID","FWD"], status: "cashcow"},
-                {name: "Josh Ward", team: "HAW", price: 290000, avg: 78, ownership: 12, status: "cashcow"},
-                {name: "Jy Simpkin", team: "NTH", price: 282000, avg: 76, ownership: 10, dpp: ["MID","FWD"], status: "cashcow"},
-                {name: "Conor Nash", team: "HAW", price: 268000, avg: 75, ownership: 6, status: "cashcow"},
-                {name: "Harvey Harrison", team: "CAR", price: 260000, avg: 65, ownership: 10, status: "cashcow"},
+                {name: "Dan Annable", team: "BRI", price: 330000, avg: 72, ownership: 22, status: "cashcow"},
                 {name: "Dyson Sharp", team: "ESS", price: 149500, avg: 75, ownership: 63, status: "cashcow"},
                 {name: "Jagga Smith", team: "CAR", price: 119900, avg: 80, ownership: 75, status: "rookie"},
-                {name: "Josh Lindsay", team: "GEE", price: 119900, avg: 65, ownership: 35, status: "rookie"},
                 {name: "Will Brodie", team: "FRE", price: 117300, avg: 55, ownership: 15, status: "rookie"},
-                {name: "Billy Cootee", team: "SYD", price: 117300, avg: 55, ownership: 12, status: "rookie"},
-                {name: "Ollie Greeves", team: "HAW", price: 102400, avg: 50, ownership: 10, status: "rookie"},
-                {name: "Jack Dalton", team: "HAW", price: 102400, avg: 48, ownership: 8, status: "rookie"},
-                {name: "Sullivan Robey", team: "SYD", price: 102400, avg: 48, ownership: 8, dpp: ["MID","FWD"], status: "rookie"}
+                {name: "Ollie Greeves", team: "HAW", price: 102400, avg: 50, ownership: 10, status: "rookie"}
             ],
             RUC: [
-                {name: "Max Gawn", team: "MEL", price: 689600, avg: 115, ownership: 18, status: "elite"},
-                {name: "Tristan Xerri", team: "NTH", price: 687300, avg: 115, ownership: 52, status: "elite"},
-                {name: "Brodie Grundy", team: "SYD", price: 677900, avg: 112, ownership: 7, status: "premium"},
+                {name: "Max Gawn", team: "MEL", price: 689600, avg: 115, ownership: 45, status: "elite"},
+                {name: "Tristan Xerri", team: "NTH", price: 687300, avg: 115, ownership: 48, status: "elite"},
+                {name: "Brodie Grundy", team: "SYD", price: 677900, avg: 112, ownership: 35, status: "premium"},
                 {name: "Luke Jackson", team: "FRE", price: 611200, avg: 105, ownership: 25, status: "premium"},
-                {name: "Darcy Cameron", team: "COL", price: 602300, avg: 102, ownership: 4, status: "premium"},
-                {name: "Tim English", team: "WBD", price: 600900, avg: 100, ownership: 15, status: "premium"},
-                {name: "Rowan Marshall", team: "STK", price: 585000, avg: 98, ownership: 8, status: "premium"},
-                {name: "Oscar McInerney", team: "BRI", price: 548000, avg: 92, ownership: 5, status: "midprice"},
-                {name: "Tom De Koning", team: "STK", price: 524230, avg: 95, ownership: 10, dpp: ["RUC","FWD"], status: "midprice"},
-                {name: "Jarrod Witts", team: "GCS", price: 518000, avg: 90, ownership: 6, status: "midprice"},
-                {name: "Lloyd Meek", team: "HAW", price: 505000, avg: 88, ownership: 8, status: "midprice"},
-                {name: "Reilly O'Brien", team: "ADE", price: 495000, avg: 92, ownership: 7, status: "midprice"},
-                {name: "Toby Nankervis", team: "RIC", price: 485000, avg: 86, ownership: 4, status: "midprice"},
-                {name: "Matt Flynn", team: "WCE", price: 468000, avg: 82, ownership: 5, status: "midprice"},
-                {name: "Sean Darcy", team: "FRE", price: 452000, avg: 80, ownership: 3, status: "midprice"},
-                {name: "Jordon Sweet", team: "PTA", price: 438000, avg: 78, ownership: 4, status: "midprice"},
+                {name: "Darcy Cameron", team: "COL", price: 602300, avg: 102, ownership: 20, status: "premium"},
+                {name: "Tim English", team: "WBD", price: 550000, avg: 98, ownership: 18, status: "premium"},
                 {name: "Sam Draper", team: "ESS", price: 380000, avg: 85, ownership: 20, dpp: ["RUC","FWD"], status: "value"},
-                {name: "Ned Reeves", team: "HAW", price: 345000, avg: 72, ownership: 6, status: "value"},
-                {name: "Braydon Preuss", team: "GWS", price: 328000, avg: 68, ownership: 3, status: "value"},
                 {name: "Lachlan McAndrew", team: "ADE", price: 286000, avg: 88, ownership: 50, status: "cashcow"},
-                {name: "Cooper Duff-Tytler", team: "WCE", price: 268000, avg: 65, ownership: 12, dpp: ["RUC","FWD"], status: "cashcow"},
-                {name: "Samson Ryan", team: "RIC", price: 248000, avg: 58, ownership: 5, status: "cashcow"},
-                {name: "Aidan Schubert", team: "HAW", price: 218000, avg: 52, ownership: 6, dpp: ["RUC","FWD"], status: "cashcow"},
                 {name: "Liam Reidy", team: "CAR", price: 119900, avg: 65, ownership: 66, dpp: ["RUC","FWD"], status: "rookie"},
-                {name: "Mitch Edwards", team: "GEE", price: 102400, avg: 50, ownership: 12, dpp: ["RUC","FWD"], status: "rookie"},
-                {name: "Phoenix Simmons", team: "BRI", price: 102400, avg: 45, ownership: 5, status: "rookie"}
+                {name: "Mitch Edwards", team: "GEE", price: 102400, avg: 50, ownership: 12, dpp: ["RUC","FWD"], status: "rookie"}
             ],
             FWD: [
                 {name: "Harry Sheezel", team: "NTH", price: 580000, avg: 107, ownership: 70, dpp: ["FWD","MID"], status: "premium"},
                 {name: "Sam Darcy", team: "WBD", price: 517600, avg: 95, ownership: 25, status: "premium"},
-                {name: "Jesse Hogan", team: "GWS", price: 485000, avg: 88, ownership: 15, status: "midprice"},
-                {name: "Dylan Moore", team: "HAW", price: 478000, avg: 87, ownership: 12, status: "midprice"},
-                {name: "Isaac Heeney", team: "SYD", price: 470000, avg: 90, ownership: 18, dpp: ["FWD","MID"], status: "midprice"},
-                {name: "Izak Rankine", team: "ADE", price: 462000, avg: 85, ownership: 14, dpp: ["FWD","MID"], status: "midprice"},
-                {name: "Kysaiah Pickett", team: "MEL", price: 455000, avg: 84, ownership: 18, dpp: ["FWD","MID"], status: "midprice"},
-                {name: "Gryan Miers", team: "GEE", price: 448000, avg: 83, ownership: 10, status: "midprice"},
-                {name: "Jeremy Cameron", team: "GEE", price: 440000, avg: 82, ownership: 8, status: "midprice"},
-                {name: "Harry McKay", team: "CAR", price: 432000, avg: 80, ownership: 6, status: "midprice"},
-                {name: "Aaron Naughton", team: "WBD", price: 425000, avg: 78, ownership: 5, status: "midprice"},
-                {name: "Joe Daniher", team: "BRI", price: 418000, avg: 76, ownership: 7, status: "midprice"},
-                {name: "Riley Thilthorpe", team: "ADE", price: 410000, avg: 75, ownership: 9, status: "midprice"},
+                {name: "Isaac Heeney", team: "SYD", price: 470000, avg: 90, ownership: 18, status: "midprice"},
                 {name: "Sam Flanders", team: "STK", price: 396600, avg: 95, ownership: 64, status: "value"},
+                {name: "Todd Marshall", team: "PTA", price: 397000, avg: 75, ownership: 20, status: "value"},
                 {name: "Charlie Curnow", team: "CAR", price: 377300, avg: 90, ownership: 30, status: "value"},
-                {name: "Todd Marshall", team: "PTA", price: 368000, avg: 72, ownership: 8, status: "value"},
-                {name: "Mitch Lewis", team: "HAW", price: 358000, avg: 70, ownership: 6, status: "value"},
-                {name: "Jake Stringer", team: "ESS", price: 348000, avg: 75, ownership: 5, status: "value"},
-                {name: "Brody Mihocek", team: "COL", price: 340000, avg: 68, ownership: 4, status: "value"},
-                {name: "Jack Ginnivan", team: "HAW", price: 332000, avg: 66, ownership: 6, status: "value"},
+                {name: "Kysaiah Pickett", team: "MEL", price: 350000, avg: 78, ownership: 22, status: "value"},
                 {name: "Latrelle Pickett", team: "MEL", price: 306000, avg: 68, ownership: 25, status: "cashcow"},
                 {name: "Sam Lalor", team: "HAW", price: 298600, avg: 72, ownership: 20, status: "cashcow"},
-                {name: "Cam Mackenzie", team: "HAW", price: 288000, avg: 65, ownership: 15, status: "cashcow"},
-                {name: "Joe Berry", team: "PTA", price: 280000, avg: 68, ownership: 12, status: "cashcow"},
                 {name: "Cooper Hynes", team: "WBD", price: 267000, avg: 60, ownership: 18, status: "cashcow"},
-                {name: "Ben King", team: "GCS", price: 258000, avg: 72, ownership: 10, status: "cashcow"},
-                {name: "Max King", team: "STK", price: 248000, avg: 70, ownership: 8, status: "cashcow"},
-                {name: "Joel Amartey", team: "SYD", price: 238000, avg: 65, ownership: 6, status: "cashcow"},
-                {name: "Harrison Jones", team: "ESS", price: 228000, avg: 62, ownership: 5, status: "cashcow"},
-                {name: "Jamarra Ugle-Hagan", team: "WBD", price: 208000, avg: 58, ownership: 6, status: "cashcow"},
                 {name: "Mattaes Phillipou", team: "STK", price: 168400, avg: 70, ownership: 45, status: "cashcow"},
-                {name: "Tyson Stengle", team: "GEE", price: 148000, avg: 65, ownership: 8, status: "cashcow"},
                 {name: "Leo Lombard", team: "GCS", price: 117300, avg: 55, ownership: 35, status: "rookie"},
                 {name: "Tobyn Murray", team: "FRE", price: 117300, avg: 55, ownership: 28, status: "rookie"},
-                {name: "Josaia Delana", team: "GWS", price: 117300, avg: 50, ownership: 20, status: "rookie"},
-                {name: "Harvey Gallagher", team: "WBD", price: 117300, avg: 52, ownership: 18, status: "rookie"},
-                {name: "Seth Campbell", team: "GCS", price: 117300, avg: 48, ownership: 12, status: "rookie"},
-                {name: "Joel Freijah", team: "ESS", price: 102400, avg: 50, ownership: 10, dpp: ["FWD","MID"], status: "rookie"},
-                {name: "Darcy Jones", team: "GWS", price: 102400, avg: 45, ownership: 8, status: "rookie"}
+                {name: "Josaia Delana", team: "GWS", price: 117300, avg: 50, ownership: 20, status: "rookie"}
             ]
         };
 
         const byeTeams = {
-            12: ["ADE", "GCS", "NTH", "PTA", "ESS", "SYD"],
-            13: ["GWS", "RIC", "GEE", "MEL", "STK", "WCE"],
-            14: ["BRI", "CAR", "COL", "FRE", "HAW", "WBD"]
+            12: ["ADE", "GCS", "PTA", "NTH"],
+            13: ["GWS", "RIC"],
+            14: ["COL", "HAW", "CAR", "FRE"]
         };
 
         const maxSlots = { DEF: 8, MID: 11, RUC: 3, FWD: 8, FLEX: 1 };
@@ -785,7 +427,6 @@
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelector(`[onclick="showTab('${tab}')"]`).classList.add('active');
             document.getElementById(`${tab}-tab`).classList.add('active');
-            if (tab === 'field') renderFieldView();
         }
 
         function renderTeam() {
@@ -1012,53 +653,6 @@
                     ]
                 };
                 saveTeam();
-            }
-        }
-
-        function renderFieldView() {
-            const positions = ['DEF', 'MID', 'RUC', 'FWD', 'FLEX'];
-            const onFieldCounts = { DEF: 6, MID: 8, RUC: 2, FWD: 6, FLEX: 1 };
-            let benchPlayers = [];
-
-            // Render on-field players in their zones
-            positions.forEach(pos => {
-                const container = document.getElementById(`field-${pos.toLowerCase()}`);
-                const players = myTeam[pos];
-                const onFieldCount = onFieldCounts[pos];
-
-                let html = '';
-                players.forEach((p, i) => {
-                    if (i < onFieldCount) {
-                        let extraClass = '';
-                        if (p.captain) extraClass = 'captain';
-                        else if (p.vc) extraClass = 'vc';
-
-                        html += `
-                            <div class="field-player ${extraClass}">
-                                <div class="fp-name">${p.name.split(' ').pop()}</div>
-                                <div class="fp-team">${p.team}</div>
-                                <div class="fp-price">$${(p.price/1000).toFixed(0)}K</div>
-                            </div>`;
-                    } else {
-                        benchPlayers.push({ ...p, pos: pos });
-                    }
-                });
-
-                container.innerHTML = html;
-            });
-
-            // Render bench players below the field
-            const benchContainer = document.getElementById('field-bench');
-            document.querySelector('.bench-container').style.display = 'block';
-
-            if (benchPlayers.length > 0) {
-                benchContainer.innerHTML = benchPlayers.map(p => `
-                    <div class="bench-player">
-                        <div class="bp-name">${p.name.split(' ').pop()}</div>
-                        <div class="bp-pos">${p.pos}</div>
-                        <div class="bp-price">$${(p.price/1000).toFixed(0)}K</div>
-                    </div>
-                `).join('');
             }
         }
 
