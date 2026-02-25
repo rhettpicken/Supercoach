@@ -1,0 +1,187 @@
+{
+  "lastUpdated": "2026-02-25",
+  "salaryCap": 10000000,
+  "season": 2026,
+  "cashCows": [
+    {
+      "name": "Jagga Smith",
+      "team": "Carlton",
+      "position": ["MID"],
+      "price": 119900,
+      "ownership": 75,
+      "projectedAverage": 80,
+      "jobSecurity": "elite",
+      "byeRound": 14,
+      "notes": "Former top 10 pick, elite disposal, guaranteed Round 1 spot"
+    },
+    {
+      "name": "Liam Reidy",
+      "team": "Carlton",
+      "position": ["RUC", "FWD"],
+      "price": 119900,
+      "ownership": 66,
+      "projectedAverage": 65,
+      "jobSecurity": "high",
+      "byeRound": 14,
+      "notes": "Dual position ruck depth, ideal for loops and emergencies"
+    },
+    {
+      "name": "Dyson Sharp",
+      "team": "Essendon",
+      "position": ["MID"],
+      "price": 149500,
+      "ownership": 63,
+      "projectedAverage": 75,
+      "jobSecurity": "high",
+      "byeRound": null,
+      "notes": "Expected to hold midfield spot"
+    },
+    {
+      "name": "Zeke Uwland",
+      "team": "Gold Coast",
+      "position": ["DEF", "MID"],
+      "price": 199000,
+      "ownership": 61,
+      "projectedAverage": 70,
+      "jobSecurity": "high",
+      "byeRound": 12,
+      "notes": "Versatile defender, excellent bench cover"
+    },
+    {
+      "name": "Sam Grlj",
+      "team": "Richmond",
+      "position": ["DEF", "MID"],
+      "price": 322000,
+      "ownership": 45,
+      "projectedAverage": 80,
+      "jobSecurity": "medium",
+      "byeRound": 13,
+      "notes": "Pick 8 in draft, outstanding preseason, averaged 80.5 in Talent League"
+    },
+    {
+      "name": "Lachlan McAndrew",
+      "team": "Adelaide",
+      "position": ["RUC"],
+      "price": 286000,
+      "ownership": 50,
+      "projectedAverage": 88,
+      "jobSecurity": "medium",
+      "byeRound": 12,
+      "notes": "Best ruck cash cow, averaged 96.8 in SANFL, played ahead of O'Brien in preseason"
+    },
+    {
+      "name": "Jacob Farrow",
+      "team": "Essendon",
+      "position": ["DEF", "MID"],
+      "price": 314000,
+      "ownership": 40,
+      "projectedAverage": 75,
+      "jobSecurity": "medium",
+      "byeRound": null,
+      "notes": "First-round pick, likened to Jordan Dawson"
+    }
+  ],
+  "premiums": {
+    "MID": [
+      {
+        "name": "Marcus Bontempelli",
+        "team": "Western Bulldogs",
+        "price": 706800,
+        "average2025": 127,
+        "projectedAverage": 127,
+        "byeRound": null,
+        "tier": "elite",
+        "notes": "Captain candidate, clearance work, goal-kicking, high ceiling"
+      },
+      {
+        "name": "Lachie Neale",
+        "team": "Brisbane",
+        "price": 650000,
+        "average2025": 118,
+        "projectedAverage": 118,
+        "byeRound": null,
+        "tier": "elite",
+        "notes": "Consistent elite scorer"
+      }
+    ],
+    "FWD": [
+      {
+        "name": "Harry Sheezel",
+        "team": "North Melbourne",
+        "price": 590000,
+        "average2025": 107,
+        "projectedAverage": 107,
+        "byeRound": 12,
+        "tier": "elite",
+        "notes": "Top priced and ranked forward"
+      },
+      {
+        "name": "Adam Treloar",
+        "team": "Collingwood",
+        "position": ["MID", "FWD"],
+        "price": 400000,
+        "average2025": 72,
+        "projectedAverage": 100,
+        "byeRound": 14,
+        "tier": "value",
+        "notes": "MID/FWD DPP, injury discount, averaged 100+ before injury"
+      }
+    ],
+    "DEF": [
+      {
+        "name": "James Sicily",
+        "team": "Hawthorn",
+        "price": 550000,
+        "average2025": 102,
+        "projectedAverage": 102,
+        "byeRound": 14,
+        "tier": "elite",
+        "notes": "Set and forget defender"
+      },
+      {
+        "name": "Will Day",
+        "team": "Hawthorn",
+        "price": 400000,
+        "average2025": null,
+        "projectedAverage": 95,
+        "byeRound": 14,
+        "tier": "value",
+        "notes": "6-game discount, high ceiling"
+      },
+      {
+        "name": "Hayden Young",
+        "team": "Fremantle",
+        "price": 400000,
+        "average2025": 85,
+        "projectedAverage": 95,
+        "byeRound": 14,
+        "tier": "value",
+        "notes": "Underpriced, bounce-back candidate"
+      }
+    ],
+    "RUC": [
+      {
+        "name": "Max Gawn",
+        "team": "Melbourne",
+        "price": 620000,
+        "average2025": 115,
+        "projectedAverage": 115,
+        "byeRound": null,
+        "tier": "elite",
+        "notes": "Premium set and forget ruck"
+      }
+    ]
+  },
+  "byeRounds": {
+    "12": ["Adelaide", "Gold Coast", "Port Adelaide", "North Melbourne"],
+    "13": ["GWS", "Richmond"],
+    "14": ["Collingwood", "Hawthorn", "Carlton", "Fremantle"]
+  },
+  "keyDates": {
+    "teamPickerOpens": "2026-02-01",
+    "round1Lockout": "2026-03-05T19:10:00+11:00",
+    "byeRound12": "2026-06-05",
+    "byeRound13": "2026-06-12",
+    "byeRound14": "2026-06-19"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "teamName": "Optimal Squad v1",
+  "created": "2026-02-25",
+  "salaryCap": 10000000,
+  "totalSpent": 9854400,
+  "remaining": 145600,
+  "projectedWeeklyScore": 2126,
+
+  "onField": {
+    "DEF": [
+      {"name": "Connor Rozee", "team": "PTA", "price": 568500, "avg": 105, "dpp": "DEF/MID"},
+      {"name": "Jordan Dawson", "team": "ADE", "price": 611300, "avg": 106, "dpp": "DEF"},
+      {"name": "Keidean Coleman", "team": "BRI", "price": 233800, "avg": 85, "dpp": "DEF"},
+      {"name": "Sam Grlj", "team": "RIC", "price": 322000, "avg": 80, "dpp": "DEF/MID"},
+      {"name": "Zeke Uwland", "team": "GCS", "price": 199000, "avg": 70, "dpp": "DEF/MID"},
+      {"name": "Jacob Farrow", "team": "ESS", "price": 314000, "avg": 75, "dpp": "DEF/MID"}
+    ],
+    "MID": [
+      {"name": "Marcus Bontempelli", "team": "WBD", "price": 706800, "avg": 127, "captain": true},
+      {"name": "Zak Butters", "team": "PTA", "price": 654800, "avg": 115, "dpp": "MID"},
+      {"name": "Noah Anderson", "team": "GCS", "price": 619700, "avg": 110, "dpp": "MID"},
+      {"name": "Adam Treloar", "team": "COL", "price": 311700, "avg": 100, "dpp": "MID/FWD"},
+      {"name": "Jagga Smith", "team": "CAR", "price": 119900, "avg": 80, "dpp": "MID"},
+      {"name": "Dyson Sharp", "team": "ESS", "price": 149500, "avg": 75, "dpp": "MID"},
+      {"name": "Harry Schoenberg", "team": "WCE", "price": 320000, "avg": 78, "dpp": "MID"},
+      {"name": "Sam Cumming", "team": "RIC", "price": 326000, "avg": 75, "dpp": "MID"}
+    ],
+    "RUC": [
+      {"name": "Tristan Xerri", "team": "NTH", "price": 687300, "avg": 115, "dpp": "RUC"},
+      {"name": "Lachlan McAndrew", "team": "ADE", "price": 286000, "avg": 88, "dpp": "RUC"}
+    ],
+    "FWD": [
+      {"name": "Harry Sheezel", "team": "NTH", "price": 580000, "avg": 107, "dpp": "MID/FWD"},
+      {"name": "Sam Flanders", "team": "STK", "price": 396600, "avg": 95, "dpp": "FWD"},
+      {"name": "Charlie Curnow", "team": "CAR", "price": 377300, "avg": 90, "dpp": "FWD"},
+      {"name": "Mattaes Phillipou", "team": "STK", "price": 168400, "avg": 70, "dpp": "FWD"},
+      {"name": "Leo Lombard", "team": "GCS", "price": 117300, "avg": 55, "dpp": "FWD"},
+      {"name": "Tobyn Murray", "team": "FRE", "price": 117300, "avg": 55, "dpp": "FWD"}
+    ],
+    "FLEX": [
+      {"name": "Hayden Young", "team": "FRE", "price": 389000, "avg": 95, "dpp": "MID"}
+    ]
+  },
+
+  "bench": {
+    "DEF": [
+      {"name": "Jai Serong", "team": "SYD", "price": 119900, "avg": 55, "emergency": true},
+      {"name": "Xavier Taylor", "team": "MEL", "price": 117300, "avg": 55, "emergency": true}
+    ],
+    "MID": [
+      {"name": "Jack Carroll", "team": "STK", "price": 332000, "avg": 75, "emergency": true},
+      {"name": "Will Brodie", "team": "FRE", "price": 117300, "avg": 55, "emergency": false},
+      {"name": "Ollie Greeves", "team": "HAW", "price": 102400, "avg": 50, "emergency": false}
+    ],
+    "RUC": [
+      {"name": "Liam Reidy", "team": "CAR", "price": 119900, "avg": 65, "dpp": "RUC/FWD", "emergency": true}
+    ],
+    "FWD": [
+      {"name": "Cooper Hynes", "team": "WBD", "price": 267000, "avg": 60, "emergency": true},
+      {"name": "Mitch Edwards", "team": "GEE", "price": 102400, "avg": 50, "dpp": "RUC/FWD", "emergency": false}
+    ]
+  },
+
+  "byeStructure": {
+    "round12": {
+      "teams": ["ADE", "GCS", "PTA", "NTH"],
+      "players": ["Jordan Dawson", "Lachlan McAndrew", "Noah Anderson", "Zeke Uwland", "Leo Lombard", "Connor Rozee", "Zak Butters", "Tristan Xerri", "Harry Sheezel"],
+      "count": 9
+    },
+    "round13": {
+      "teams": ["GWS", "RIC"],
+      "players": ["Sam Grlj", "Sam Cumming"],
+      "count": 2
+    },
+    "round14": {
+      "teams": ["COL", "HAW", "CAR", "FRE"],
+      "players": ["Adam Treloar", "Ollie Greeves", "Charlie Curnow", "Jagga Smith", "Liam Reidy", "Hayden Young", "Will Brodie", "Tobyn Murray"],
+      "count": 8
+    }
+  },
+
+  "captainOptions": [
+    {"name": "Marcus Bontempelli", "priority": 1, "avgScore": 127},
+    {"name": "Zak Butters", "priority": 2, "avgScore": 115},
+    {"name": "Tristan Xerri", "priority": 3, "avgScore": 115},
+    {"name": "Harry Sheezel", "priority": 4, "avgScore": 107}
+  ],
+
+  "tradePriorities": {
+    "week1to4": "Monitor cash cows, hold trades unless emergencies",
+    "week5to8": "Upgrade peaked cash cows to premiums",
+    "week9to12": "Balance bye structure, trade out heavy bye players"
+  }
+}
