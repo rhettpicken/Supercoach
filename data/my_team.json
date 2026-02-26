@@ -1,94 +1,347 @@
 {
-  "teamName": "Optimal Squad v1",
-  "created": "2026-02-25",
+  "teamName": "Optimal Squad 2026",
+  "created": "2026-02-26",
+  "source": "Built from official SuperCoach 2026 data",
   "salaryCap": 10000000,
-  "totalSpent": 9854400,
-  "remaining": 145600,
-  "projectedWeeklyScore": 2126,
-
+  "totalSpent": 9959800,
+  "remaining": 40200,
+  "projectedWeeklyScore": 2064,
   "onField": {
     "DEF": [
-      {"name": "Connor Rozee", "team": "PTA", "price": 568500, "avg": 105, "dpp": "DEF/MID"},
-      {"name": "Jordan Dawson", "team": "ADE", "price": 611300, "avg": 106, "dpp": "DEF"},
-      {"name": "Keidean Coleman", "team": "BRI", "price": 233800, "avg": 85, "dpp": "DEF"},
-      {"name": "Sam Grlj", "team": "RIC", "price": 322000, "avg": 80, "dpp": "DEF/MID"},
-      {"name": "Zeke Uwland", "team": "GCS", "price": 199000, "avg": 70, "dpp": "DEF/MID"},
-      {"name": "Jacob Farrow", "team": "ESS", "price": 314000, "avg": 75, "dpp": "DEF/MID"}
+      {
+        "name": "Nasiah Wanganeen-Milera",
+        "team": "STK",
+        "price": 622300,
+        "avg": 115.0,
+        "bye": 13
+      },
+      {
+        "name": "Connor Rozee",
+        "team": "PTA",
+        "price": 568500,
+        "avg": 105.0,
+        "bye": 12,
+        "dpp": "DEF/MID"
+      },
+      {
+        "name": "Dougal Howard",
+        "team": "STK",
+        "price": 242400,
+        "avg": 64.0,
+        "bye": 13
+      },
+      {
+        "name": "Keidean Coleman",
+        "team": "BRL",
+        "price": 233800,
+        "avg": 72.0,
+        "bye": 14
+      },
+      {
+        "name": "Josh Gibcus",
+        "team": "RIC",
+        "price": 139600,
+        "avg": 43.0,
+        "bye": 13
+      },
+      {
+        "name": "Wil Parker",
+        "team": "COL",
+        "price": 138500,
+        "avg": 32.0,
+        "bye": 14
+      }
     ],
     "MID": [
-      {"name": "Marcus Bontempelli", "team": "WBD", "price": 706800, "avg": 127, "captain": true},
-      {"name": "Zak Butters", "team": "PTA", "price": 654800, "avg": 115, "dpp": "MID"},
-      {"name": "Noah Anderson", "team": "GCS", "price": 619700, "avg": 110, "dpp": "MID"},
-      {"name": "Adam Treloar", "team": "COL", "price": 311700, "avg": 100, "dpp": "MID/FWD"},
-      {"name": "Jagga Smith", "team": "CAR", "price": 119900, "avg": 80, "dpp": "MID"},
-      {"name": "Dyson Sharp", "team": "ESS", "price": 149500, "avg": 75, "dpp": "MID"},
-      {"name": "Harry Schoenberg", "team": "WCE", "price": 320000, "avg": 78, "dpp": "MID"},
-      {"name": "Sam Cumming", "team": "RIC", "price": 326000, "avg": 75, "dpp": "MID"}
+      {
+        "name": "Marcus Bontempelli",
+        "team": "WBD",
+        "price": 706800,
+        "avg": 130.6,
+        "bye": 14
+      },
+      {
+        "name": "Zak Butters",
+        "team": "PTA",
+        "price": 654800,
+        "avg": 121.0,
+        "bye": 12
+      },
+      {
+        "name": "Matt Rowell",
+        "team": "GCS",
+        "price": 641400,
+        "avg": 118.5,
+        "bye": 12
+      },
+      {
+        "name": "Nick Daicos",
+        "team": "COL",
+        "price": 628400,
+        "avg": 116.1,
+        "bye": 14
+      },
+      {
+        "name": "Harry Sheezel",
+        "team": "NTH",
+        "price": 580400,
+        "avg": 107.3,
+        "bye": 12,
+        "dpp": "MID/FWD"
+      },
+      {
+        "name": "Darcy Parish",
+        "team": "ESS",
+        "price": 334600,
+        "avg": 88.3,
+        "bye": 12
+      },
+      {
+        "name": "Ewan Mackinlay",
+        "team": "PTA",
+        "price": 216500,
+        "avg": 80.0,
+        "bye": 12
+      },
+      {
+        "name": "George Stevens",
+        "team": "GEE",
+        "price": 201300,
+        "avg": 62.0,
+        "bye": 13
+      }
     ],
     "RUC": [
-      {"name": "Tristan Xerri", "team": "NTH", "price": 687300, "avg": 115, "dpp": "RUC"},
-      {"name": "Lachlan McAndrew", "team": "ADE", "price": 286000, "avg": 88, "dpp": "RUC"}
+      {
+        "name": "Tristan Xerri",
+        "team": "NTH",
+        "price": 687300,
+        "avg": 127.0,
+        "bye": 12
+      },
+      {
+        "name": "Sam Draper",
+        "team": "BRL",
+        "price": 396600,
+        "avg": 91.6,
+        "bye": 14,
+        "dpp": "RUC/FWD"
+      }
     ],
     "FWD": [
-      {"name": "Harry Sheezel", "team": "NTH", "price": 580000, "avg": 107, "dpp": "MID/FWD"},
-      {"name": "Sam Flanders", "team": "STK", "price": 396600, "avg": 95, "dpp": "FWD"},
-      {"name": "Charlie Curnow", "team": "CAR", "price": 377300, "avg": 90, "dpp": "FWD"},
-      {"name": "Mattaes Phillipou", "team": "STK", "price": 168400, "avg": 70, "dpp": "FWD"},
-      {"name": "Leo Lombard", "team": "GCS", "price": 117300, "avg": 55, "dpp": "FWD"},
-      {"name": "Tobyn Murray", "team": "FRE", "price": 117300, "avg": 55, "dpp": "FWD"}
+      {
+        "name": "Riley Thilthorpe",
+        "team": "ADE",
+        "price": 525400,
+        "avg": 97.1,
+        "bye": 12
+      },
+      {
+        "name": "Cooper Trembath",
+        "team": "NTH",
+        "price": 271500,
+        "avg": 71.7,
+        "bye": 12
+      },
+      {
+        "name": "Jordan Croft",
+        "team": "WBD",
+        "price": 209400,
+        "avg": 64.5,
+        "bye": 14
+      },
+      {
+        "name": "Henry Smith",
+        "team": "BRL",
+        "price": 194800,
+        "avg": 45.0,
+        "bye": 14
+      },
+      {
+        "name": "Lachlan Gulbin",
+        "team": "GCS",
+        "price": 132600,
+        "avg": 49.0,
+        "bye": 12
+      },
+      {
+        "name": "Ty Gallop",
+        "team": "BRL",
+        "price": 132600,
+        "avg": 35.0,
+        "bye": 14
+      }
     ],
     "FLEX": [
-      {"name": "Hayden Young", "team": "FRE", "price": 389000, "avg": 95, "dpp": "MID"}
+      {
+        "name": "Nic Martin",
+        "team": "ESS",
+        "price": 529000,
+        "avg": 97.8,
+        "bye": 12,
+        "dpp": "MID/FWD"
+      }
     ]
   },
-
   "bench": {
     "DEF": [
-      {"name": "Jai Serong", "team": "SYD", "price": 119900, "avg": 55, "emergency": true},
-      {"name": "Xavier Taylor", "team": "MEL", "price": 117300, "avg": 55, "emergency": true}
+      {
+        "name": "Harrison Ramm",
+        "team": "PTA",
+        "price": 121200,
+        "avg": 28.0,
+        "bye": 12
+      },
+      {
+        "name": "Jed Adams",
+        "team": "MEL",
+        "price": 119900,
+        "avg": 36.0,
+        "bye": 13
+      }
     ],
     "MID": [
-      {"name": "Jack Carroll", "team": "STK", "price": 332000, "avg": 75, "emergency": true},
-      {"name": "Will Brodie", "team": "FRE", "price": 117300, "avg": 55, "emergency": false},
-      {"name": "Ollie Greeves", "team": "HAW", "price": 102400, "avg": 50, "emergency": false}
+      {
+        "name": "Chayce Jones",
+        "team": "ADE",
+        "price": 119900,
+        "avg": 19.4,
+        "bye": 12
+      },
+      {
+        "name": "Harry DeMattia",
+        "team": "COL",
+        "price": 119900,
+        "avg": 0.0,
+        "bye": 14
+      },
+      {
+        "name": "Luke Urquhart",
+        "team": "NTH",
+        "price": 119900,
+        "avg": 0.0,
+        "bye": 12
+      }
     ],
     "RUC": [
-      {"name": "Liam Reidy", "team": "CAR", "price": 119900, "avg": 65, "dpp": "RUC/FWD", "emergency": true}
+      {
+        "name": "Liam Reidy",
+        "team": "CAR",
+        "price": 119900,
+        "avg": 34.0,
+        "bye": 14,
+        "dpp": "RUC/FWD"
+      }
     ],
     "FWD": [
-      {"name": "Cooper Hynes", "team": "WBD", "price": 267000, "avg": 60, "emergency": true},
-      {"name": "Mitch Edwards", "team": "GEE", "price": 102400, "avg": 50, "dpp": "RUC/FWD", "emergency": false}
+      {
+        "name": "Oliver Wiltshire",
+        "team": "GEE",
+        "price": 130700,
+        "avg": 34.5,
+        "bye": 13
+      },
+      {
+        "name": "Josaia Delana",
+        "team": "GWS",
+        "price": 119900,
+        "avg": 28.0,
+        "bye": 13
+      }
     ]
   },
-
+  "captainOptions": [
+    {
+      "name": "Marcus Bontempelli",
+      "priority": 1,
+      "avgScore": 130.6
+    },
+    {
+      "name": "Tristan Xerri",
+      "priority": 2,
+      "avgScore": 127.0
+    },
+    {
+      "name": "Zak Butters",
+      "priority": 3,
+      "avgScore": 121.0
+    },
+    {
+      "name": "Matt Rowell",
+      "priority": 4,
+      "avgScore": 118.5
+    }
+  ],
   "byeStructure": {
     "round12": {
-      "teams": ["ADE", "GCS", "PTA", "NTH"],
-      "players": ["Jordan Dawson", "Lachlan McAndrew", "Noah Anderson", "Zeke Uwland", "Leo Lombard", "Connor Rozee", "Zak Butters", "Tristan Xerri", "Harry Sheezel"],
-      "count": 9
+      "teams": [
+        "ADE",
+        "GCS",
+        "NTH",
+        "PTA",
+        "ESS",
+        "SYD"
+      ],
+      "players": [
+        "Connor Rozee",
+        "Harrison Ramm",
+        "Zak Butters",
+        "Matt Rowell",
+        "Harry Sheezel",
+        "Darcy Parish",
+        "Ewan Mackinlay",
+        "Chayce Jones",
+        "Luke Urquhart",
+        "Tristan Xerri",
+        "Riley Thilthorpe",
+        "Cooper Trembath",
+        "Lachlan Gulbin",
+        "Nic Martin"
+      ],
+      "count": 14
     },
     "round13": {
-      "teams": ["GWS", "RIC"],
-      "players": ["Sam Grlj", "Sam Cumming"],
-      "count": 2
+      "teams": [
+        "GWS",
+        "RIC",
+        "GEE",
+        "MEL",
+        "STK",
+        "WCE"
+      ],
+      "players": [
+        "Nasiah Wanganeen-Milera",
+        "Dougal Howard",
+        "Josh Gibcus",
+        "Jed Adams",
+        "George Stevens",
+        "Oliver Wiltshire",
+        "Josaia Delana"
+      ],
+      "count": 7
     },
     "round14": {
-      "teams": ["COL", "HAW", "CAR", "FRE"],
-      "players": ["Adam Treloar", "Ollie Greeves", "Charlie Curnow", "Jagga Smith", "Liam Reidy", "Hayden Young", "Will Brodie", "Tobyn Murray"],
-      "count": 8
+      "teams": [
+        "BRL",
+        "CAR",
+        "COL",
+        "FRE",
+        "HAW",
+        "WBD"
+      ],
+      "players": [
+        "Keidean Coleman",
+        "Wil Parker",
+        "Marcus Bontempelli",
+        "Nick Daicos",
+        "Harry DeMattia",
+        "Sam Draper",
+        "Liam Reidy",
+        "Jordan Croft",
+        "Henry Smith",
+        "Ty Gallop"
+      ],
+      "count": 10
     }
-  },
-
-  "captainOptions": [
-    {"name": "Marcus Bontempelli", "priority": 1, "avgScore": 127},
-    {"name": "Zak Butters", "priority": 2, "avgScore": 115},
-    {"name": "Tristan Xerri", "priority": 3, "avgScore": 115},
-    {"name": "Harry Sheezel", "priority": 4, "avgScore": 107}
-  ],
-
-  "tradePriorities": {
-    "week1to4": "Monitor cash cows, hold trades unless emergencies",
-    "week5to8": "Upgrade peaked cash cows to premiums",
-    "week9to12": "Balance bye structure, trade out heavy bye players"
   }
 }
